@@ -1,4 +1,4 @@
-FROM  gcc:latest
+FROM  cyberdojofoundation/gplusplus
 LABEL maintainer=estermann.michel@gmail.com
 
 ARG CUKE_VERSION=v0.5
