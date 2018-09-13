@@ -1,4 +1,4 @@
-FROM  gcc:8.2.0
+FROM  gcc:latest
 LABEL maintainer=estermann.michel@gmail.com
 
 ARG CUKE_VERSION=v0.5
