@@ -1,0 +1,22 @@
+{
+  "display_name": "C++ (g++), Cucumber-cpp",
+  "visible_filenames": [
+    "features/hiker.feature",
+    "features/step_definitions/cucumber.wire",
+    "features/step_definitions/hiker_steps.cpp",
+    "cyber-dojo.sh",
+    "makefile"
+  ],
+  "highlight_filenames": [
+    "features/hiker.feature",
+    "features/step_definitions/hiker_steps.cpp"
+  ],
+  "image_name": "cyberdojofoundation/gpp_cucumber_gtest",
+  "filename_extension": [
+    ".cpp",
+    ".hpp",
+    ".feature"
+  ],
+  "tab_size": 4,
+  "runner_choice": "stateless"
+}
