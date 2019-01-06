@@ -1,5 +1,6 @@
 #include <gtest/gtest.h>
 #include <cucumber-cpp/autodetect.hpp>
+#include "hiker.hpp"
 
 namespace
 {
@@ -20,7 +21,7 @@ WHEN("^they spell (\\d+) times (\\d+)")
     REGEX_PARAM(size_t, multiplier);
     REGEX_PARAM(size_t, multiplicand);
     ScenarioScope<HikerCtx> context{};
-    context->result = multiplier * multiplicand;
+    context->result = answer(multiplier, multiplicand);
 }
 
 THEN("^the score is (\\d+)$")

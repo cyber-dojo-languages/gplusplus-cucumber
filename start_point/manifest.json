@@ -5,11 +5,15 @@
     "features/step_definitions/cucumber.wire",
     "features/step_definitions/hiker_steps.cpp",
     "cyber-dojo.sh",
-    "makefile"
+    "makefile",
+    "hiker.hpp",
+    "hiker.cpp"
   ],
   "highlight_filenames": [
     "features/hiker.feature",
-    "features/step_definitions/hiker_steps.cpp"
+    "features/step_definitions/hiker_steps.cpp",
+    "hiker.hpp",
+    "hiker.cpp"
   ],
   "image_name": "cyberdojofoundation/gpp_cucumber_gtest",
   "filename_extension": [
@@ -18,5 +22,6 @@
     ".feature"
   ],
   "tab_size": 4,
+  "max_seconds": 20,
   "runner_choice": "stateless"
 }
