@@ -1,21 +1,23 @@
-FROM  cyberdojofoundation/gplusplus
+FROM cyberdojofoundation/gplusplus
 LABEL maintainer=estermann.michel@gmail.com
 
 ARG CUKE_VERSION=v0.5
 
-RUN apt-get update && apt-get upgrade -y
-RUN apt-get install -y ruby ruby-dev
-RUN gem install bundler
-
-# Install googletest headers and boost
-RUN apt-get install -y cmake git libboost-all-dev libgtest-dev
+RUN apt-get update \
+  && apt-get install -y \
+    cmake \
+    git \
+    libboost-all-dev \
+    libgtest-dev \
+    ruby \
+    ruby-dev
 
 # build cucumber-cpp
 RUN git clone https://github.com/cucumber/cucumber-cpp.git
 WORKDIR "cucumber-cpp"
 RUN git checkout tags/$CUKE_VERSION
 
-RUN bundle install
+RUN gem install bundler && bundle install
 RUN mkdir build && (cd build && cmake -DCUKE_DISABLE_QT=on -DCUKE_ENABLE_EXAMPLES=on ..)
 RUN cmake --build build --target install
 RUN mv build/gmock/src/gtest-build/libg* /usr/lib
