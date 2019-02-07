@@ -3,28 +3,29 @@ LABEL maintainer=estermann.michel@gmail.com
 
 ARG CUKE_VERSION=v0.5
 
-RUN apt-get update \
-  && apt-get install -y \
+RUN \
+apt-get update && \
+apt-get install --yes \
     cmake \
     git \
     libboost-all-dev \
     libgtest-dev \
     ruby \
-    ruby-dev
-
-# build cucumber-cpp
-RUN git clone https://github.com/cucumber/cucumber-cpp.git
-WORKDIR "cucumber-cpp"
-RUN git checkout tags/$CUKE_VERSION
-
-RUN gem install bundler && bundle install
-RUN mkdir build && (cd build && cmake -DCUKE_DISABLE_QT=on -DCUKE_ENABLE_EXAMPLES=on ..)
-RUN cmake --build build --target install
-RUN mv build/gmock/src/gtest-build/libg* /usr/lib
+    ruby-dev && \
+\
+`# build cucumber-cpp` \
+git clone https://github.com/cucumber/cucumber-cpp.git && \
+cd cucumber-cpp && \
+git checkout tags/$CUKE_VERSION && \
+\
+gem install bundler && \
+bundle install && \
+mkdir build && (cd build && cmake -DCUKE_DISABLE_QT=on -DCUKE_ENABLE_EXAMPLES=on ..) && \
+cmake --build build --target install && \
+mv build/gmock/src/gtest-build/libg* /usr/lib && \
+\
+`# cleanup` \
+rm -rf /cucumber-cpp && \
+apt-get remove --yes cmake
 
 COPY red_amber_green.rb /usr/local/bin
-WORKDIR /
-
-# cleanup
-RUN rm -rf cucumber-cpp
-RUN apt-get remove -y cmake
