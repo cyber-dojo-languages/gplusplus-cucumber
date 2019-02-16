@@ -22,6 +22,5 @@
     ".feature"
   ],
   "tab_size": 4,
-  "max_seconds": 20,
-  "runner_choice": "stateless"
+  "max_seconds": 20
 }
