@@ -19,7 +19,9 @@
   "filename_extension": [
     ".cpp",
     ".hpp",
-    ".feature"
+    ".feature",
+    ".c",
+    ".h"
   ],
   "tab_size": 4,
   "max_seconds": 20
