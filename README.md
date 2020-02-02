@@ -1,4 +1,6 @@
-# C++ (g++), cucumber
+[![CircleCI](https://circleci.com/gh/cyber-dojo-languages/gplusplus-cucumber.svg?style=svg)](https://circleci.com/gh/cyber-dojo-languages/gplusplus-cucumber)
 
-[![Build Status](https://travis-ci.org/cyber-dojo-languages/gplusplus--cucumber.svg?branch=master)](https://travis-ci.org/cyber-dojo-languages/gplusplus-cucumber)
-[Cucumber-cpp](https://github.com/cucumber/cucumber-cpp) language startpoint for [cyber-dojo](https://github.com/cyber-dojo/cyber-dojo).
+## display_name="C++ (g++), Cucumber-cpp"
+## image_name="cyberdojofoundation/gpp_cucumber_gtest"
+
+![cyber-dojo.org home page](https://github.com/cyber-dojo/cyber-dojo/blob/master/shared/home_page_snapshot.png)
