@@ -1,5 +1,5 @@
 CXXFLAGS += -I.
-CXXFLAGS += -std=c++17
+CXXFLAGS += -std=c++2a
 CXXFLAGS += -Wall -Wextra
 CXXFLAGS += -fprofile-arcs -ftest-coverage
 
@@ -16,7 +16,7 @@ CPP_STEP_FILES = $(wildcard features/step_definitions/*.cpp)
 test.output: test makefile
 	@./$< > /dev/null &
 
-test: makefile $(CPP_FILES) $(CPP_STEP_FILES) $(COMPILED_HPP_FILES)
+test: $(CPP_FILES) $(CPP_STEP_FILES) $(COMPILED_HPP_FILES)
 	@$(CXX) $(CXXFLAGS) -O $(CPP_FILES) $(CPP_STEP_FILES) $(GTEST_LIBS) $(BOOST_LIBS) $(CUCUMBER_LIB) -o $@
 
 # This rule ensures header files build in their own right.
