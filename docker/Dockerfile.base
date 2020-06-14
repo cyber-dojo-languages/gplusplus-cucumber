@@ -1,4 +1,4 @@
-FROM cyberdojofoundation/gplusplus:4c0dab3c
+FROM cyberdojofoundation/gplusplus:4c0dab3
 LABEL maintainer=estermann.michel@gmail.com
 
 COPY install.sh .
