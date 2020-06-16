@@ -1,6 +1,7 @@
-FROM cyberdojofoundation/gplusplus:4c0dab3
+FROM  gcc:8.2.0
 LABEL maintainer=estermann.michel@gmail.com
 
 COPY install.sh .
 RUN ./install.sh && rm ./install.sh
+
 COPY red_amber_green.rb /usr/local/bin
