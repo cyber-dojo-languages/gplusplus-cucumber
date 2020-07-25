@@ -1,0 +1,51 @@
+
+I have tried upgrading to gcc:latest in Dockerfile.base
+The image builds ok, but it doesn't work when you use it in the
+gplusplus-cucumber start-point. You get the following error
+
+{
+  "stdout": {
+    "content": [
+      "In file included from /usr/include/boost/regex/v4/regex.hpp:82,\n",
+      "                 from /usr/include/boost/regex.hpp:31,\n",
+      "                 from /usr/local/include/cucumber-cpp/internal/utils/Regex.hpp:8,\n",
+      "                 from /usr/local/include/cucumber-cpp/internal/step/StepManager.hpp:22,\n",
+      "                 from /usr/local/include/cucumber-cpp/internal/defs.hpp:1,\n",
+      "                 from /usr/local/include/cucumber-cpp/autodetect.hpp:1,\n",
+      "                 from features/step_definitions/hiker_steps.cpp:2:\n",
+      "/usr/include/boost/regex/v4/match_results.hpp: In instantiation of 'class boost::match_results<const char*>':\n",
+      "/usr/include/boost/regex/v4/instances.hpp:182:44:   required from here\n",
+      "/usr/include/boost/regex/v4/match_results.hpp:60:77: error: no type named 'const_reference' in 'class std::allocator<boost::sub_match<const char*> >'\n",
+      "   60 |    typedef typename Allocator::const_reference                              const_reference;\n",
+      "      |                                                                             ^~~~~~~~~~~~~~~\n",
+      "/usr/include/boost/regex/v4/match_results.hpp: In instantiation of 'class boost::match_results<__gnu_cxx::__normal_iterator<const char*, std::__cxx11::basic_string<char> > >':\n",
+      "/usr/include/boost/regex/v4/instances.hpp:198:72:   required from here\n",
+      "/usr/include/boost/regex/v4/match_results.hpp:60:77: error: no type named 'const_reference' in 'class std::allocator<boost::sub_match<__gnu_cxx::__normal_iterator<const char*, std::__cxx11::basic_string<char> > > >'\n",
+      "/usr/include/boost/regex/v4/match_results.hpp: In instantiation of 'class boost::match_results<const wchar_t*>':\n",
+      "/usr/include/boost/regex/v4/instances.hpp:182:44:   required from here\n",
+      "/usr/include/boost/regex/v4/match_results.hpp:60:77: error: no type named 'const_reference' in 'class std::allocator<boost::sub_match<const wchar_t*> >'\n",
+      "/usr/include/boost/regex/v4/match_results.hpp: In instantiation of 'class boost::match_results<__gnu_cxx::__normal_iterator<const wchar_t*, std::__cxx11::basic_string<wchar_t> > >':\n",
+      "/usr/include/boost/regex/v4/instances.hpp:198:72:   required from here\n",
+      "/usr/include/boost/regex/v4/match_results.hpp:60:77: error: no type named 'const_reference' in 'class std::allocator<boost::sub_match<__gnu_cxx::__normal_iterator<const wchar_t*, std::__cxx11::basic_string<wchar_t> > > >'\n",
+      "make: *** [makefile:20: test] Error 1\n"
+    ],
+    "truncated": false
+  },
+  "stderr": {
+    "content": [
+
+    ],
+    "truncated": false
+  },
+  "status": "0",
+  "outcome": "amber",
+  "created": {
+  },
+  "deleted": [
+
+  ],
+  "changed": {
+  },
+  "log": {
+  }
+}
