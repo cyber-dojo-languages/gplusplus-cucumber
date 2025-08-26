@@ -15,7 +15,8 @@ apt-get install --no-install-recommends \
           nlohmann-json3-dev \
           qt6-base-dev \
           ruby \
-          ruby-dev
+          ruby-dev \
+          --yes
 
 gem install bundler
 bundle install
