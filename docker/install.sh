@@ -1,5 +1,8 @@
 #!/bin/bash -Eeu
 
+git clone https://github.com/cucumber/cucumber-cpp.git
+cd cucumber-cpp
+
 apt-get update && apt-get upgrade --yes
 
 apt-get install --no-install-recommends \
@@ -28,12 +31,10 @@ mkdir build
 cd build
 cmake ../
 cmake --build . --parallel
-sudo cmake --install .
-
-git clone https://github.com/cucumber/cucumber-cpp.git
-cd cucumber-cpp
+cmake --install .
 
 # Create build directory
+cd ../..
 cmake -E make_directory build
 
 # Generate Makefiles
