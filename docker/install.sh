@@ -1,6 +1,6 @@
 #!/bin/bash -Eeu
 
-readonly CUKE_VERSION=v0.5
+readonly CUKE_VERSION=v0.7.0
 
 apt-get update && apt-get upgrade --yes
 apt-get install --yes ruby ruby-dev

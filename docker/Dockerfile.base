@@ -1,4 +1,4 @@
-FROM  gcc:8.2.0
+FROM ghcr.io/cyber-dojo-languages/gplusplus:8be9183
 LABEL maintainer=estermann.michel@gmail.com
 
 COPY install.sh .
