@@ -8,6 +8,7 @@ gem install bundler
 apt-get install --yes cmake git libboost-all-dev libgtest-dev
 
 git clone https://github.com/cucumber/cucumber-cpp.git
+cd cucumber-cpp
 
 # Create build directory
 cmake -E make_directory build
