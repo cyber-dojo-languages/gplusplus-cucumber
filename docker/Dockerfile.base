@@ -1,4 +1,4 @@
-FROM ghcr.io/cyber-dojo-languages/gplusplus:7a9a292
+FROM ghcr.io/cyber-dojo-languages/gplusplus:2001faa
 LABEL maintainer=estermann.michel@gmail.com
 
 COPY install.sh .
